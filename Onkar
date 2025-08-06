@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Code') {
+            steps {
+                git url: 'https://github.com/your-username/your-repo.git', credentialsId: 'your-creds-id'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building the app...'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the app...'
+            }
+        }
+    }
+}
